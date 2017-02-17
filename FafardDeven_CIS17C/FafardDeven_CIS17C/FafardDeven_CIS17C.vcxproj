@@ -147,6 +147,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="HW_1A.cpp" />
+    <ClCompile Include="HW_2a.cpp" />
+    <ClCompile Include="HW_2B.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Data.txt" />

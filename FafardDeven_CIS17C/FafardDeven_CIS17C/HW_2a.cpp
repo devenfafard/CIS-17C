@@ -6,7 +6,7 @@ Project: HW_2A.cpp
 Programmer: Deven Fafard
 Class: CIS-17C
 ========================================
-*/
+
 
 #include <iostream>
 #include <iomanip>
@@ -84,3 +84,4 @@ void displayResult(char choice, double scores[], int SIZE)
 
 	}
 }
+*/
