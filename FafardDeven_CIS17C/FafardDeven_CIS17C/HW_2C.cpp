@@ -18,21 +18,19 @@ using namespace std;
 void getGrades(char[][3], const int ROW, const int COL);
 void displayGrades(char arr[][3], const int ROW, const int COL);
 void calcGPA(double gpas[5], char arr[][3], const int ROW, const int COL);
-void calcAvgGPA(double avgs[3], char arr[][3], const int ROW, const int COL);
+void calcAvgGPA(char arr[][3], const int ROW, const int COL);
 
 int main()
 {
 	const int CLASS_SIZE = 5, CLASS_AMT = 3;
 	char grades[CLASS_SIZE][CLASS_AMT];
 	double gpas[5] = { 0 };
-	double avgGpas[3] = { 0 };
 	
 	getGrades(grades, CLASS_SIZE, CLASS_AMT);
 	displayGrades(grades, CLASS_SIZE, CLASS_AMT);
 	calcGPA(gpas, grades, CLASS_SIZE, CLASS_AMT);
-	calcAvgGPA(avgGpas, grades, CLASS_SIZE, CLASS_AMT);
-
-
+	calcAvgGPA(grades, CLASS_SIZE, CLASS_AMT);
+	
 	return 0;
 }
 
@@ -88,7 +86,7 @@ void calcGPA(double gpas[5], char arr[][3], const int ROW, const int COL)
 		sum = 0;
 		for (int j = 0; j < COL; j++)
 		{
-			switch (arr[i][j])
+			switch (toupper(arr[i][j]))
 			{
 				case 'A':
 					sum += 4;
@@ -120,45 +118,37 @@ void calcGPA(double gpas[5], char arr[][3], const int ROW, const int COL)
 	}
 }
 
-void calcAvgGPA(double avgs[3], char arr[][3], const int ROW, const int COL)
+void calcAvgGPA(char arr[][3], const int ROW, const int COL)
 {
+	cout << "----------  AVERAGE GPAS ----------" << endl
+		<< "ENGLISH   " << "HISTORY   " << "MATH      " << endl;
+
 	double sum = 0;
 
-	for (int i = 0; i < ROW; i++)
+	for (int i = 0; i < COL; i++)
 	{
-		for (int j = 0; i < COL; i++)
+		for (int j = 0; i < ROW; i++)
 		{
-			switch (arr[i][j])
+			switch (toupper(arr[i][j]))
 			{
 				case 'A':
-					avgs[j] += 4;
+					sum += 4;
 					break;
 				case 'B':
-					avgs[j] += 3;
+					sum += 3;
 					break;
 				case 'C':
-					avgs[j] += 2;
+					sum += 2;
 					break;
 				case 'D':
-					avgs[j] += 1;
+					sum += 1;
 					break;
 				case 'F':
 					break;
 			}
 		}
-		
-		for (int i = 0; i < COL; i++)
-		{
-			avgs[i] = avgs[i] / 3;
-		}
-		
-	}
-	cout << "----------  AVERAGE GPAS ----------" << endl
-		<< "ENGLISH   " << "HISTORY   " << "MATH      " << endl;
 
-	for (int i = 0; i < COL; i++)
-	{
-		cout << setw(10) << fixed << setprecision(2) << avgs[i];
+		cout << sum / 5 << "     ";
 	}
 
 	cout << endl << endl;
