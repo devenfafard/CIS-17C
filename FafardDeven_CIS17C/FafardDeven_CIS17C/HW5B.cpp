@@ -30,13 +30,32 @@ int main()
 	{
 		cout << cities[i] << endl;
 	}
+	cout << endl;
+
 	//With iterator
+	cout << "Here's the list outputted with an iterator: " << endl;
 	for (it; it != cities.end(); it++)
 	{
-		//cout << cities[it];
+		cout << *it << endl;
 	}
+	cout << endl;
 
+	//With reverse iterator
+	cout << "Here's the list outputted with the reverse iterator: " << endl;
+	for (rit; rit != cities.rend(); rit++)
+	{
+		cout << *rit << endl;
+	}
+	cout << endl;
 
+	cout << "There are " << cities.size() << " cities in this list." << endl;
+	cout << "The second city in the list is " << cities[1] << "." << endl;
+
+	string temp = cities[1];
+	cities[1] = cities[0];
+	cities[0] = temp;
+
+	cout << "After swapping, the second city is " << cities[1] << "." << endl << endl;
 
 	return 0;
 }
