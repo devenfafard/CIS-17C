@@ -3,7 +3,7 @@
 
 class Stack
 {
-	struct Node { int _id; Node* next; };
+	struct Node { char _id; Node* next; };
 
 private:
 	Node* top;
@@ -20,7 +20,7 @@ public:
 		}
 	}
 
-	void push(int id)
+	void push(char id)
 	{
 		if (!isFull())
 		{
@@ -31,7 +31,7 @@ public:
 		}
 	}
 
-	void pop(int &id)
+	void pop(char &id)
 	{
 		if (!isEmpty())
 		{
