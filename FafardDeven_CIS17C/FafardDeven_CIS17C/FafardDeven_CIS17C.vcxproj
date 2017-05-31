@@ -146,10 +146,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="HW_1A.cpp" />
+    <ClCompile Include="IntegerSet.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Data.txt" />
+    <ClInclude Include="IntegerSet.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
